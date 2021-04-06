@@ -78,47 +78,4 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-
-  Widget _crearTarjetas(BuildContext context, int index,
-      AsyncSnapshot<List<Astronomy>> snapshot) {
-    return Card(
-      elevation: 2.8,
-      shadowColor: Colors.blue[300],
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      clipBehavior: Clip.antiAlias,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              Image(
-                  image: snapshot.data[index].mediaType == "image"
-                      ? NetworkImage(snapshot.data[index].url)
-                      : NetworkImage("https://i.stack.imgur.com/y9DpT.jpg")),
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  snapshot.data[index].title,
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  snapshot.data[index].date,
-                  style: TextStyle(color: Color(0xff72767e)),
-                )
-              ],
-            ),
-          ),
-          TextButton(onPressed: () {}, child: Text("View more"))
-        ],
-      ),
-    );
-  }
 }

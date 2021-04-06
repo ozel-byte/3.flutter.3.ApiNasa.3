@@ -8,7 +8,7 @@ class ServicioApiNasa {
     String _url = "api.nasa.gov";
     String _path = "/planetary/apod";
     final _parametros = {
-      "api_key": "OY6GMKJBOMXwZoOiw43KWLUinWVmzjSq5uKcr2Fv",
+      "api_key": "",
       "start_date": "2019-07-08",
       "end_date": "2019-07-20"
     };
